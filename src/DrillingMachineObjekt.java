@@ -29,11 +29,34 @@ public class DrillingMachineObjekt {
                 + " - Kaputt?: " + broken);
     }
 
-    public void becomeBroken(){
-        broken  = true;
+    public void becomeBroken() {
+        broken = true;
+    }
+    //task 3a)
+    public void setBroken(boolean isBroken) { this.broken = isBroken; }
 
+    //task 3b)
+    public void increasePrice(double amount) { this.price += amount ; }
+
+    //task 3c)
+    public void changePower(int watt) {
+        if (watt > 0) {
+            this.watt += watt;
+            if (watt > 100) {
+                this.price *= 1.05;
+            } else {
+                this.watt += watt;
+                this.price *= 0.9;
+            }
+
+        }
     }
 }
+
+
+
+
+
 
 
 
