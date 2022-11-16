@@ -32,11 +32,16 @@ public class DrillingMachineObjekt {
     public void becomeBroken() {
         broken = true;
     }
+
     //task 3a)
-    public void setBroken(boolean isBroken) { this.broken = isBroken; }
+    public void setBroken(boolean isBroken) {
+        this.broken = isBroken;
+    }
 
     //task 3b)
-    public void increasePrice(double amount) { this.price += amount ; }
+    public void increasePrice(double amount) {
+        this.price += amount;
+    }
 
     //task 3c)
     public void changePower(int watt) {
@@ -51,7 +56,37 @@ public class DrillingMachineObjekt {
 
         }
     }
+
+    //task 5a
+    public boolean increasePricebyPercentage(double percentage) {
+        if (percentage > 0.0) {
+            this.price *= percentage;
+            if (this.price > 100) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    //task 5b)
+    public boolean repair2() {
+        if (this.broken) {
+            this.broken = false;
+            return true;
+        }
+        return false;
+    }
+
+    //task 5c)
+    public String getInfo() {
+        return (" Name: " + this.name +
+                " -Age: " + this.age +
+                " -Watts: " + this.watt +
+                " -Price:" + this.price);
+    }
 }
+
 
 
 
